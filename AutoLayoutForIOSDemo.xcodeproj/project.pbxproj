@@ -21,6 +21,7 @@
 		319CC25718C8064400A2617C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319CC23918C8064300A2617C /* UIKit.framework */; };
 		319CC25F18C8064400A2617C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 319CC25D18C8064400A2617C /* InfoPlist.strings */; };
 		319CC26118C8064400A2617C /* AutoLayoutForIOSDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 319CC26018C8064400A2617C /* AutoLayoutForIOSDemoTests.m */; };
+		319CC26B18C80D6E00A2617C /* DocumentsLayout.json in Resources */ = {isa = PBXBuildFile; fileRef = 319CC26A18C80D6E00A2617C /* DocumentsLayout.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		319CC25C18C8064400A2617C /* AutoLayoutForIOSDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AutoLayoutForIOSDemoTests-Info.plist"; sourceTree = "<group>"; };
 		319CC25E18C8064400A2617C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		319CC26018C8064400A2617C /* AutoLayoutForIOSDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoLayoutForIOSDemoTests.m; sourceTree = "<group>"; };
+		319CC26A18C80D6E00A2617C /* DocumentsLayout.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DocumentsLayout.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 		319CC23C18C8064300A2617C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				319CC26A18C80D6E00A2617C /* DocumentsLayout.json */,
 				319CC23D18C8064300A2617C /* AutoLayoutForIOSDemo-Info.plist */,
 				319CC23E18C8064300A2617C /* InfoPlist.strings */,
 				319CC24118C8064300A2617C /* main.m */,
@@ -228,6 +231,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				319CC26B18C80D6E00A2617C /* DocumentsLayout.json in Resources */,
 				319CC24E18C8064300A2617C /* Images.xcassets in Resources */,
 				319CC24018C8064300A2617C /* InfoPlist.strings in Resources */,
 				319CC24918C8064300A2617C /* Main.storyboard in Resources */,
