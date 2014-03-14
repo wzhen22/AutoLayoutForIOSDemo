@@ -18,6 +18,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+//    判断当前设备的版本号
+    float numOfVersion = [[[UIDevice currentDevice]systemVersion] floatValue];
+    if (numOfVersion >5.0) {
+        NSLog(@"yes");
+    }
     
     NSArray *typeOfArray = @[@"button",@"label",@"textField"];//用于判断接受控键的类型
     
@@ -26,6 +31,13 @@
     NSData *ldata = [NSData dataWithContentsOfFile:path options:NSDataReadingMappedIfSafe error:nil];
     NSDictionary *lDictionary = [NSJSONSerialization JSONObjectWithData:ldata options:NSJSONReadingAllowFragments error:nil];//通过json文件解析出来的字典用于动态布局
 //    NSLog(@"%@",lDictionary);
+    
+    UIButton *buOfUI = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    buOfUI.frame = CGRectMake(10, 50, 60, 40);
+    buOfUI.backgroundColor = [UIColor redColor];
+    [buOfUI setTitle:@"解析" forState:UIControlStateNormal];
+    [buOfUI addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:buOfUI];
     
     int numOfitems;               //纪录需要布局的控键的个数
     numOfitems = [lDictionary allKeys].count-1;
@@ -98,6 +110,15 @@
 -(void)textClick{
     //do any additional setup
     
+}
+
+-(void)click:(UIButton *)sender{
+    NSString *lstring = [[NSBundle mainBundle] resourcePath];
+    NSString *path = [lstring stringByAppendingPathComponent:@"dfs.rtf"];
+//    NSString *string = [[NSBundle mainBundle] pathForResource:@"dfs" ofType:@"rtf"];
+    NSData *data = [NSData dataWithContentsOfFile:path options:NSDataReadingMappedIfSafe error:nil];
+    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+    NSLog(@"%@",dic);
 }
 
 //CGRectMake(CGFloat x, CGFloat y, CGFloat width, CGFloat height)

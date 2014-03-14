@@ -1,0 +1,179 @@
+{\rtf1\ansi\ansicpg936\cocoartf1187\cocoasubrtf390
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset134 STHeitiSC-Light;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww20280\viewh12360\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\fs24 \cf0  \{cmdtype:"gcm",rightmsg:\{type:2,conn:"Data Source=wzgthb_gw;User ID=cqcs;Password=xxsoft",adapter:"System.Data.OracleClient",sql:"select colname as 
+\f1 \'c3\'fb\'b3\'c6
+\f0 ,val as 
+\f1 \'ca\'fd\'d6\'b5
+\f0    from  table(     rowtocol.SqlRow2Col('select * from ( select count(*)||''
+\f1 \'ca\'d6
+\f0 ''                                                                                                     
+\f1 \'d7\'a1\'d5\'ac
+\f0 _
+\f1 \'cd\'f8\'c7\'a9\'ca\'fd\'c1\'bf
+\f0 ,        sum(BUILDAREA)  ||''
+\f1 \'c6\'bd\'b7\'bd\'c3\'d7
+\f0 ''                                                                                          
+\f1 \'d7\'a1\'d5\'ac
+\f0 _
+\f1 \'d7\'dc\'c3\'e6\'bb\'fd
+\f0 ,        count(distinct a.bldroomid) ||''
+\f1 \'cc\'d7
+\f0 ''                                                                                
+\f1 \'d7\'a1\'d5\'ac
+\f0 _
+\f1 \'d7\'dc\'cc\'d7\'ca\'fd
+\f0 ,        cast(AVG(case when a.BUILD_PRICE>0 then BUILD_PRICE end ) as number(30, 2))||''
+\f1 \'c6\'bd\'b7\'bd\'c3\'d7
+\f0 ''                        
+\f1 \'d7\'a1\'d5\'ac
+\f0 _
+\f1 \'bd\'a8\'d6\'fe\'be\'f9\'bc\'db
+\f0 ,        cast(AVG(case when a.INSIDE_PRICE>0 then a.INSIDE_PRICE end)as number(30, 2)) ||''
+\f1 \'c6\'bd\'b7\'bd\'c3\'d7
+\f0 /
+\f1 \'d4\'aa
+\f0 ''                     
+\f1 \'d7\'a1\'d5\'ac
+\f0 _
+\f1 \'cc\'d7\'c4\'da\'be\'f9\'bc\'db
+\f0 ,        cast(max(a.BUILD_PRICE) as number(30, 2)) ||''
+\f1 \'c6\'bd\'b7\'bd\'c3\'d7
+\f0 /
+\f1 \'d4\'aa
+\f0 ''                                                          
+\f1 \'d7\'a1\'d5\'ac
+\f0 _
+\f1 \'d7\'ee\'b4\'f3\'bd\'a8\'d6\'fe\'b5\'a5\'bc\'db
+\f0 ,        cast(max(a.INSIDE_PRICE) as number(30, 2)) ||''
+\f1 \'c6\'bd\'b7\'bd\'c3\'d7
+\f0 /
+\f1 \'d4\'aa
+\f0 ''                                                           
+\f1 \'d7\'a1\'d5\'ac
+\f0 _
+\f1 \'d7\'ee\'b4\'f3\'cc\'d7\'c4\'da\'b5\'a5\'bc\'db
+\f0 ,        cast(min( case when  a.BUILD_PRICE>100 then  a.BUILD_PRICE end  ) as number(30, 2)) ||''
+\f1 \'c6\'bd\'b7\'bd\'c3\'d7
+\f0 /
+\f1 \'d4\'aa
+\f0 ''                   
+\f1 \'d7\'a1\'d5\'ac
+\f0 _
+\f1 \'d7\'ee\'d0\'a1\'bd\'a8\'d6\'fe\'b5\'a5\'bc\'db
+\f0 ,        cast(min( case when  a.INSIDE_PRICE >100 then   a.INSIDE_PRICE end ) as number(30, 2)) ||''
+\f1 \'c6\'bd\'b7\'bd\'c3\'d7
+\f0 /
+\f1 \'d4\'aa
+\f0 ''                    
+\f1 \'d7\'a1\'d5\'ac
+\f0 _
+\f1 \'d7\'ee\'d0\'a1\'cc\'d7\'c4\'da\'b5\'a5\'bc\'db
+\f0 ,            cast(MEDIAN(case when build_price>0 then build_price end ) as number(30, 2)) ||''
+\f1 \'c6\'bd\'b7\'bd\'c3\'d7
+\f0 /
+\f1 \'d4\'aa
+\f0 ''                              
+\f1 \'d7\'a1\'d5\'ac
+\f0 _
+\f1 \'bd\'a8\'c3\'e6\'b5\'a5\'bc\'db\'d6\'d0\'ce\'bb\'ca\'fd
+\f0 ,        cast(MEDIAN(case when INSIDE_PRICE>0 then INSIDE_PRICE end ) as number(30, 2))  ||''
+\f1 \'c6\'bd\'b7\'bd\'c3\'d7
+\f0 /
+\f1 \'d4\'aa
+\f0 ''                         
+\f1 \'d7\'a1\'d5\'ac
+\f0 _
+\f1 \'cc\'d7\'c4\'da\'b5\'a5\'bc\'db\'d6\'d0\'ce\'bb\'ca\'fd
+\f0    from xx_dfj_online_sign a  where a.typeid in(1060130009,1060130017)    and BUILD_USE =1490010001    and to_char(a.signdate, ''yyyy-mm-dd'') >= to_char(sysdate-[arg0],''yyyy-mm-dd'') ),( select count(*)||''
+\f1 \'ca\'d6
+\f0 ''                                                                                                               
+\f1 \'b7\'c7\'d7\'a1\'d5\'ac
+\f0 _
+\f1 \'cd\'f8\'c7\'a9\'ca\'fd\'c1\'bf
+\f0 ,       sum(BUILDAREA)  ||''
+\f1 \'c6\'bd\'b7\'bd\'c3\'d7
+\f0 ''                                                                                                  
+\f1 \'b7\'c7\'d7\'a1\'d5\'ac
+\f0 _
+\f1 \'d7\'dc\'c3\'e6\'bb\'fd
+\f0 ,       count(distinct a.bldroomid)||''
+\f1 \'cc\'d7
+\f0 ''                                                                                  
+\f1 \'b7\'c7\'d7\'a1\'d5\'ac
+\f0 _
+\f1 \'d7\'dc\'cc\'d7\'ca\'fd
+\f0 ,       cast(AVG(case when a.BUILD_PRICE>0 then BUILD_PRICE end ) as number(30, 2)) ||''
+\f1 \'c6\'bd\'b7\'bd\'c3\'d7
+\f0 ''                                             
+\f1 \'b7\'c7\'d7\'a1\'d5\'ac
+\f0 _
+\f1 \'bd\'a8\'d6\'fe\'be\'f9\'bc\'db
+\f0 ,       cast(AVG(case when a.INSIDE_PRICE>0 then a.INSIDE_PRICE end)as number(30, 2)) ||''
+\f1 \'c6\'bd\'b7\'bd\'c3\'d7
+\f0 /
+\f1 \'d4\'aa
+\f0 ''                                
+\f1 \'b7\'c7\'d7\'a1\'d5\'ac
+\f0 _
+\f1 \'cc\'d7\'c4\'da\'be\'f9\'bc\'db
+\f0 ,       cast(max(a.BUILD_PRICE) as number(30, 2)) ||''
+\f1 \'c6\'bd\'b7\'bd\'c3\'d7
+\f0 /
+\f1 \'d4\'aa
+\f0 ''                                                                     
+\f1 \'b7\'c7\'d7\'a1\'d5\'ac
+\f0 _
+\f1 \'d7\'ee\'b4\'f3\'bd\'a8\'d6\'fe\'b5\'a5\'bc\'db
+\f0 ,       cast(max(a.INSIDE_PRICE) as number(30, 2)) ||''
+\f1 \'c6\'bd\'b7\'bd\'c3\'d7
+\f0 /
+\f1 \'d4\'aa
+\f0 ''                                                                  
+\f1 \'b7\'c7\'d7\'a1\'d5\'ac
+\f0 _
+\f1 \'d7\'ee\'b4\'f3\'cc\'d7\'c4\'da\'b5\'a5\'bc\'db
+\f0 ,       cast(min( case when  a.BUILD_PRICE>100 then  a.BUILD_PRICE end  ) as number(30, 2)) ||''
+\f1 \'c6\'bd\'b7\'bd\'c3\'d7
+\f0 /
+\f1 \'d4\'aa
+\f0 ''                           
+\f1 \'b7\'c7\'d7\'a1\'d5\'ac
+\f0 _
+\f1 \'d7\'ee\'d0\'a1\'bd\'a8\'d6\'fe\'b5\'a5\'bc\'db
+\f0 ,       cast(min( case when  a.INSIDE_PRICE >100 then   a.INSIDE_PRICE end ) as number(30, 2)) ||''
+\f1 \'c6\'bd\'b7\'bd\'c3\'d7
+\f0 /
+\f1 \'d4\'aa
+\f0 ''                       
+\f1 \'b7\'c7\'d7\'a1\'d5\'ac
+\f0 _
+\f1 \'d7\'ee\'d0\'a1\'cc\'d7\'c4\'da\'b5\'a5\'bc\'db
+\f0 ,       cast(MEDIAN(case when build_price>0 then build_price end ) as number(30, 2)) ||''
+\f1 \'c6\'bd\'b7\'bd\'c3\'d7
+\f0 /
+\f1 \'d4\'aa
+\f0 ''                                 
+\f1 \'b7\'c7\'d7\'a1\'d5\'ac
+\f0 _
+\f1 \'bd\'a8\'c3\'e6\'b5\'a5\'bc\'db\'d6\'d0\'ce\'bb\'ca\'fd
+\f0 ,       cast(MEDIAN(case when INSIDE_PRICE>0 then INSIDE_PRICE end ) as number(30, 2))  ||''
+\f1 \'c6\'bd\'b7\'bd\'c3\'d7
+\f0 /
+\f1 \'d4\'aa
+\f0 ''                                
+\f1 \'b7\'c7\'d7\'a1\'d5\'ac
+\f0 _
+\f1 \'cc\'d7\'c4\'da\'b5\'a5\'bc\'db\'d6\'d0\'ce\'bb\'ca\'fd
+\f0    from xx_dfj_online_sign a  where a.typeid in(1060130009,1060130017)    and BUILD_USE <>1490010001    and to_char(a.signdate, ''yyyy-mm-dd'')> = to_char(sysdate-[arg0],''yyyy-mm-dd'') )'))"\},errormsg:"
+\f1 \'b2\'e9\'d1\'af\'ca\'a7\'b0\'dc
+\f0 ",args:[\{index:0,name:"
+\f1 \'c7\'eb\'ca\'e4\'c8\'eb\'ca\'b1\'bc\'e4
+\f0 (
+\f1 \'cc\'ec
+\f0 )
+\f1 \'a3\'ba
+\f0 "\}]\}}
